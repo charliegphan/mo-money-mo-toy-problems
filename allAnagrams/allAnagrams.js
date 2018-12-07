@@ -13,7 +13,23 @@
   */
 
 var allAnagrams = function(string) {
-  // anagrams[]
+  const anagrams = [];
+  
+  const generateAnagram = (anagram, leftoverStr) => {
+    if (leftoverStr.length === 0) {
+      anagrams.push(anagram);
+      return;
+    }
+
+    for (let i = 0; i < leftoverStr.length; i++) {
+      let newAnagram = anagram + leftoverStr[i];
+      generateAnagram(newAnagram, 
+        leftoverStr.slice(0, i) + leftoverStr.slice(i + 1, leftoverStr.length)
+      );
+    }
+  }
+  
+  generateAnagram('', string);
   // generateAnagram(anagram, leftoverString)
     // check if leftover str is empty
      // push string to anagrams
@@ -22,6 +38,8 @@ var allAnagrams = function(string) {
     // iterate over each character in leftover str
     // add that to a new anagram
     // call generateAngram with character pulled from leftover, and newAnagram
-
-  // return anagrams
+  return anagrams
 };
+
+
+console.log(allAnagrams('abc'));
