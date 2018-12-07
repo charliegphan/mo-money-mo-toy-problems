@@ -24,7 +24,7 @@ var allAnagrams = function(string) {
     for (let i = 0; i < leftoverStr.length; i++) {
       let newAnagram = anagram + leftoverStr[i];
       generateAnagram(newAnagram, 
-        leftoverStr.slice(0, i) + leftoverStr.slice(i + 1, leftoverStr.length)
+        leftoverStr.slice(0, i) + leftoverStr.slice(i + 1)
       );
     }
   }
