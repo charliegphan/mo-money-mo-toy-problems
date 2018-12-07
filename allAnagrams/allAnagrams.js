@@ -30,16 +30,5 @@ var allAnagrams = function(string) {
   }
   
   generateAnagram('', string);
-  // generateAnagram(anagram, leftoverString)
-    // check if leftover str is empty
-     // push string to anagrams
-     // return;
-
-    // iterate over each character in leftover str
-    // add that to a new anagram
-    // call generateAngram with character pulled from leftover, and newAnagram
   return anagrams
 };
-
-
-console.log(allAnagrams('abc'));
