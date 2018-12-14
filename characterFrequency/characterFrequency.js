@@ -34,7 +34,9 @@
  *  ]
  *
  */
-
+const comparator = (tuple1, tuple2) => {
+  return tuple1[0] > tuple2[0];
+}
 
 var characterFrequency = function(string) {
   const charCount = {};
@@ -48,7 +50,13 @@ var characterFrequency = function(string) {
     }
   }
 
-  return charCount;
+  const tuples = [];
+
+  for (let key in charCount) {
+    tuples.push([key, charCount[key]]);
+  }
+
+  return tuples;
 };
 
 console.log(characterFrequency('miaaiaaippi'));
