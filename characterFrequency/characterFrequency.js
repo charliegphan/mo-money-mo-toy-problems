@@ -37,5 +37,18 @@
 
 
 var characterFrequency = function(string) {
-  return result;
+  const charCount = {};
+
+  for (let i = 0; i < string.length; i++) {
+    console.log(string[i]);
+    if (!charCount[string[i]]) {
+      charCount[string[i]] = 1;
+    } else {
+      charCount[string[i]]++;
+    }
+  }
+
+  return charCount;
 };
+
+console.log(characterFrequency('miaaiaaippi'));
