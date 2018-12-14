@@ -35,7 +35,12 @@
  *
  */
 const comparator = (tuple1, tuple2) => {
-  return tuple1[0] > tuple2[0];
+  if (tuple1[1] === tuple2[1]) {
+    return tuple1[0] > tuple2[0];
+  } else {
+    return tuple1[1] < tuple2[1];
+  }
+
 }
 
 var characterFrequency = function(string) {
@@ -56,7 +61,9 @@ var characterFrequency = function(string) {
     tuples.push([key, charCount[key]]);
   }
 
-  return tuples;
+  return tuples.sort(comparator);
 };
 
 console.log(characterFrequency('miaaiaaippi'));
+console.log(characterFrequency('mmmaaaiiibbb'));
+console.log(characterFrequency('mississippi'));
