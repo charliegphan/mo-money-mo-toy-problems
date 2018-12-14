@@ -11,5 +11,24 @@
 */
 
 var evenOccurrence = function(arr) {
-  // Your code here.
+  const numCount = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!numCount[arr[i]]) {
+      numCount[arr[i]] = 1;
+    } else {
+      numCount[arr[i]]++;
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (numCount[arr[i]] % 2 === 0) {
+      return arr[i];
+    }
+  }
+
+  return null;
 };
+
+console.log(evenOccurrence([1, 7, 2, 4, 5, 6, 8, 9, 6, 4]));
+console.log(evenOccurrence([1, 7, 2, 58, 9, 6, 4]));
