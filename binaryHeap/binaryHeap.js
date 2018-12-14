@@ -79,7 +79,16 @@ BinaryHeap.prototype.getRoot = function () {
 }
 
 BinaryHeap.prototype.insert = function (value) {
-  // TODO: Your code here
+  let insertIndex = this._heap.length;
+
+  this._heap.push(value);
+  while (this._compare(this._heap[insertIndex], this._heap[(insertIndex - 1) / 2])) {
+    const placeholderValue = this._heap[insertIndex];
+
+    this._heap[insertIndex] = this._heap[(insertIndex - 1) / 2];
+    this._heap[(insertIndex - 1) / 2] = placeholderValue;
+    insertIndex = (insertIndex - 1) / 2;
+  } 
 }
 
 BinaryHeap.prototype.removeRoot = function () {
@@ -90,5 +99,6 @@ BinaryHeap.prototype.removeRoot = function () {
 //   // TODO: Your code here
 // }
 
-// I: 
-// [0, 1, 2, 3, 4, 5, 6, 7] 
+// I: -1
+// O: [-1, 1, 2, 3, 4, 5, 6, 7] 
+
