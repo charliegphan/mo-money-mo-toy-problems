@@ -25,7 +25,7 @@ makeChange(2) === 2
 */
 
 var makeChange = function(total) {
-
+  const change = [1, 5, 10, 25];
 };
 
 
