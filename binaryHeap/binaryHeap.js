@@ -85,3 +85,10 @@ BinaryHeap.prototype.insert = function (value) {
 BinaryHeap.prototype.removeRoot = function () {
   // TODO: Your code here
 }
+
+// BinaryHeap.prototype.heapSort = function () {
+//   // TODO: Your code here
+// }
+
+// I: 
+// [0, 1, 2, 3, 4, 5, 6, 7] 
