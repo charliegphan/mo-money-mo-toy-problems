@@ -68,7 +68,7 @@
 
 
 function BinaryHeap () {
-  this._heap = [];
+  this._heap = [0, 1, 2, 3, 4, 5, 6, 7];
   // this compare function will result in a minHeap, use it to make comparisons between nodes in your solution
   this._compare = function (i, j) { return i < j };
 }
@@ -82,13 +82,18 @@ BinaryHeap.prototype.insert = function (value) {
   let insertIndex = this._heap.length;
 
   this._heap.push(value);
-  while (this._compare(this._heap[insertIndex], this._heap[(insertIndex - 1) / 2])) {
+
+  while (this._compare(this._heap[insertIndex], this._heap[Math.floor((insertIndex - 1) / 2)])) {
     const placeholderValue = this._heap[insertIndex];
 
-    this._heap[insertIndex] = this._heap[(insertIndex - 1) / 2];
-    this._heap[(insertIndex - 1) / 2] = placeholderValue;
-    insertIndex = (insertIndex - 1) / 2;
-  } 
+    this._heap[insertIndex] = this._heap[Math.floor((insertIndex - 1) / 2)];
+    this._heap[Math.floor((insertIndex - 1) / 2)] = placeholderValue;
+    insertIndex = Math.floor((insertIndex - 1) / 2);
+  }
+
+  for (let i = 0; i < this._heap.length; i++) {
+    
+  }
 }
 
 BinaryHeap.prototype.removeRoot = function () {
@@ -102,3 +107,7 @@ BinaryHeap.prototype.removeRoot = function () {
 // I: -1
 // O: [-1, 1, 2, 3, 4, 5, 6, 7] 
 
+const minHeap = new BinaryHeap();
+
+minHeap.insert(-1);
+minHeap.insert(-2);
