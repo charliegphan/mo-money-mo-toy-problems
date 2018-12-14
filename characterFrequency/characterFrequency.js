@@ -63,7 +63,3 @@ var characterFrequency = function(string) {
 
   return tuples.sort(comparator);
 };
-
-console.log(characterFrequency('miaaiaaippi'));
-console.log(characterFrequency('mmmaaaiiibbb'));
-console.log(characterFrequency('mississippi'));
